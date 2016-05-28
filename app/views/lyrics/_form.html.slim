@@ -1,0 +1,12 @@
+= form_for @lyric do |f|
+  - if @lyric.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@lyric.errors.count, "error")} prohibited this lyric from being saved:"
+      ul
+        - @lyric.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :body
+    = f.text_area :body
+  .actions = f.submit

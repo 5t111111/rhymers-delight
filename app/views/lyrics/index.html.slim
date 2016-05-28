@@ -1,0 +1,21 @@
+h1 Listing lyrics
+
+table
+  thead
+    tr
+      th Body
+      th
+      th
+      th
+
+  tbody
+    - @lyrics.each do |lyric|
+      tr
+        td = lyric.body
+        td = link_to 'Show', lyric
+        td = link_to 'Edit', edit_lyric_path(lyric)
+        td = link_to 'Destroy', lyric, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Lyric', new_lyric_path
