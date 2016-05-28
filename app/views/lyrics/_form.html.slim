@@ -1,12 +1,22 @@
-= form_for @lyric do |f|
-  - if @lyric.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@lyric.errors.count, "error")} prohibited this lyric from being saved:"
-      ul
-        - @lyric.errors.full_messages.each do |message|
-          li = message
+.col-xs-6
+  h1 Lyric
+  = form_for @lyric do |f|
+    - if @lyric.errors.any?
+      #error_explanation
+        h2 = "#{pluralize(@lyric.errors.count, "error")} prohibited this lyric from being saved:"
+        ul
+          - @lyric.errors.full_messages.each do |message|
+            li = message
+    .form-group
+      #rhyme-editor
+    .actions
+      = f.submit
 
-  .field
-    = f.label :body
-    = f.text_area :body
-  .actions = f.submit
+.col-xs-6
+  h1 Rhyme
+  .lyric
+    .lyric__body
+      #rhyme
+
+javascript:
+  window.RhymeMachine = (new window.RhymeEditor.RhymeEditor(document.getElementById('rhyme-editor'), #{{@lyric.to_json}})).render()
