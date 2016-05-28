@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/suzuki86/rhymer.git
+  revision: 218d3c403c951f4e59bb6f909b389ed82cfd74f5
+  specs:
+    rhymer (0.0.2)
+      natto (~> 1.1.0)
+
+GIT
   remote: https://github.com/5t111111/tapp.git
   revision: eba500b69d89a184d2382afe117a94a7ce562d37
   branch: add-decoration-feature
@@ -95,6 +102,8 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.0.0)
     minitest (5.9.0)
+    natto (1.1.0)
+      ffi (>= 1.9.0)
     nio4r (1.2.1)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -212,6 +221,7 @@ DEPENDENCIES
   rails (>= 5.0.0.rc1, < 5.1)
   rails_12factor
   redis (~> 3.0)
+  rhymer!
   sass-rails (~> 5.0)
   slim-rails
   spring

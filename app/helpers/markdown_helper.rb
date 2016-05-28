@@ -3,5 +3,3 @@ module MarkdownHelper
     Kramdown::Document.new(source, input: 'GFM').to_html
   end
 end
-
-
